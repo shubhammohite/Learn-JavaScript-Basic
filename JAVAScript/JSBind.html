@@ -1,0 +1,31 @@
+<html>
+<body>
+
+<h1>JavaScript Function bind()</h1>
+
+<p>This example creates 2 objects (person and member).</p>
+<p>The member object borrows the fullname method from person:</p> 
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const member = {
+  firstName:"Hege",
+  lastName: "Nilsen",
+}
+
+let fullName = person.fullName.bind(member);
+
+document.getElementById("demo").innerHTML = fullName();
+</script>
+
+</body>
+</html>
